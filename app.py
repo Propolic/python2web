@@ -22,6 +22,9 @@ def extract_ip():
 
 @app.route('/')
 def index():
-    myIP = extraxt_ip()
+    try:
+        myIP = extraxt_ip()
+    except:
+        myIP = "Ничего не получилось!"
     str = f'<p>Привет Матвейка! <br>Это наше первое приложение на Питоне в сети Интернет!<br>Ура!<br>{myIP}</p>'
     return str
