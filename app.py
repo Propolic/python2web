@@ -8,7 +8,7 @@ import socket
 logging.basicConfig(level=logging.DEBUG)
 
 app = Flask(__name__)
-
+'''
 def extract_ip():
     st = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     try:
@@ -19,7 +19,7 @@ def extract_ip():
     finally:
         st.close()
     return IP
-
+'''
 @app.route('/')
 def index():
     # try:
