@@ -1,13 +1,14 @@
-# print("Привет мир!")
-
-from flask import Flask, json, request
-import logging
-
+#-------------------------------------------------------------------------------
+# Name:        module1
+# Purpose:
+#
+# Author:      Денис
+#
+# Created:     16.10.2022
+# Copyright:   (c) Денис 2022
+# Licence:     <your licence>
+#-------------------------------------------------------------------------------
 import socket
-
-logging.basicConfig(level=logging.DEBUG)
-
-app = Flask(__name__)
 
 def extract_ip():
     st = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -20,11 +21,17 @@ def extract_ip():
         st.close()
     return IP
 
-@app.route('/')
-def index():
+def main():
+
     try:
         myIP = extraxt_ip()
     except:
         myIP = "Ничего не получилось!"
+    print(extract_ip())
+
     stri = f'<p>Привет Матвейка! <br>Это наше первое приложение на Питоне в сети Интернет!<br>Ура!<br>{myIP}</p>'
-    return stri
+    print(stri)
+    pass
+
+if __name__ == '__main__':
+    main()
