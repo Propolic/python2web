@@ -3,7 +3,7 @@
 from flask import Flask, json, request
 import logging
 
-import socket
+# import socket
 
 logging.basicConfig(level=logging.DEBUG)
 
